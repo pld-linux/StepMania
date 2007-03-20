@@ -1,0 +1,15 @@
+--- StepMania-3.9-src.org/autoconf/m4/lua.m4    2007-03-20 20:40:30.000000000 +0100
++++ StepMania-3.9-src/autoconf/m4/lua.m4        2007-03-20 20:41:28.000000000 +0100
+@@ -1,9 +1,9 @@
+ AC_DEFUN(SM_LUA, [
+
+-AC_CHECK_PROGS(LUA_CONFIG, [lua-config50 lua-config], "")
++AC_CHECK_PROGS(LUA_CONFIG, [pkg-config], "")
+ if test "$LUA_CONFIG" != ""; then
+-	LUA_CFLAGS=`$LUA_CONFIG --include`
+-	LUA_LIBS=`$LUA_CONFIG --static`
++	LUA_CFLAGS=`$LUA_CONFIG lua50 --cflags`
++	LUA_LIBS=`$LUA_CONFIG lua50 --libs`
+
+ 	old_LIBS=$LIBS
+ 	LIBS="$LIBS $LUA_LIBS"
