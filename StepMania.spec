@@ -29,13 +29,13 @@ Gra rytmu.
 
 %prep
 %setup -q -n %{name}-%{version}-src
-%patch0 -p0
-%patch1 -p0
-%patch2 -p0
-%patch3 -p0
-%patch4 -p0
-%patch5 -p0
-%patch6 -p1
+%patch -P0 -p0
+%patch -P1 -p0
+%patch -P2 -p0
+%patch -P3 -p0
+%patch -P4 -p0
+%patch -P5 -p0
+%patch -P6 -p1
 
 %build
 %{__aclocal} -I autoconf/m4
